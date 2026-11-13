@@ -532,8 +532,8 @@ async def driver_copilot_chat(req: DriverChatRequest):
             if is_hf_space:
                 base_url = re.sub(r"/(chat|gradio_api/call/.*)?$", "", AI_INFERENCE_URL).rstrip("/")
                 endpoints = [
-                    f"{base_url}/gradio_api/call/gradio_chat",
                     f"{base_url}/gradio_api/call/chat",
+                    f"{base_url}/gradio_api/call/gradio_chat",
                 ]
                 hf_headers = {"Content-Type": "application/json"}
                 if hf_token:
